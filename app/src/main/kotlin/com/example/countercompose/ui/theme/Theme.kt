@@ -41,6 +41,13 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
+fun CounterComposeTheme(
+    darkTheme: Boolean = isSystemInDarkTheme(),
+    dynamicColor: Boolean = false,
+    content: @Composable () -> Unit
+) = ComposeCounterGivenTheme(darkTheme = darkTheme, dynamicColor = dynamicColor, content = content)
+
+@Composable
 fun ComposeCounterGivenTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
